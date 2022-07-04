@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="test.js"></script> -->
+    <title>Test | IQ test</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <header>
+        <h1>INTELLIGENCE QUOTIENT [IQ] </h1>
+    </header>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="#">Take test</a>
+        <a href="form4.html">Login/SignUp/Profile</a>
+    </nav>
+    <main><div class="bg">
+    <form >
+        <h2>IQ TEST QUIZ</h2>
+        <ol>
+            <li class="left">What starts with "E" and ends with "E" but only has one letter in it?<br>
+            <input type="radio" id="opt1" name="q1"  value="EYE"><label for="opt1">EYE</label>
+            <input type="radio" id="opt2" name="q1"  value="ENVELOPE"><label for="opt2">ENVELOPE</label>
+            <input type="radio" id="opt3" name="q1"  value="EAGLE"><label for="opt3">EAGLE</label>
+            <input type="radio" id="opt4" name="q1"  value="EERIE"><label for="opt4">EERIE</label>
+            </li><br>
+            <LI class="right">What can be broken but never held?<br>
+            <input type="radio" id="opt5" name="q2"  value="SILENCE"><label for="opt5">SILENCE</label>
+            <input type="radio" id="opt6" name="q2"  value="GLASS"><label for="opt6">GLASS</label>
+            <input type="radio" id="opt7" name="q2"  value="PLASTIC"><label for="opt7">PLASTIC</label>
+            <input type="radio" id="opt8" name="q2"  value="WATER"><label for="opt8">WATER</label>
+            
+            </LI><br>
+            <li class="left">Which word in the dictionary is always spelled incorrectly?<br>
+            <input type="radio" id="opt9" name="q3"  value="NONCHALANTLY"><label for="opt9">NONCHALANTLY</label>
+            <input type="radio" id="opt10" name="q3"   value="PRONOUNCIATION"><label for="opt10">PRONOUNCIATION</label>
+            <input type="radio" id="opt11" name="q3"  value="INCORRECTLY"><label for="opt11">INCORRECTLY</label>
+            <input type="radio" id="opt12" name="q3"  value="MISSPELL"><label for="opt12">MISSPELL</label>
+            
+            </li><br>
+            
+            <li class="right">Forwards I’m heavy, but backwards I’m not. What am I?<br>
+            <input type="radio" id="opt13" name="q4"  value="TON"><label for="opt13">TON</label>
+            <input type="radio" id="opt14" name="q4"  value="ELEPHANT"><label for="opt14">ELEPHANT</label>
+            <input type="radio" id="opt15" name="q4"  value="DUMBELL"><label for="opt15">DUMBELL</label>
+            <input type="radio" id="opt16" name="q4"  value="SUBMARINE"><label for="opt16">SUBMARINE</label>
+            
+            </li><br>
+            <li class="left">What’s full of holes but can still hold liquid?<br>
+            <input type="radio" id="opt17" name="q5"  value="POLYTHENEBAG"><label for="opt17">POLYTHENE BAG</label>
+            <input type="radio" id="opt18" name="q5"  value="AQUARIUM"><label for="opt18">AQUARIUM</label>
+            <input type="radio" id="opt19" name="q5"  value="EYES"><label for="opt19">EYES</label>
+            <input type="radio" id="opt20" name="q5"  value="SPONGE"><label for="opt20">SPONGE</label>
+            
+            </li><br>
+        </ol>
+        <button type="button" onclick="displayRadioValue()" >Submit</button>
+        <button type="reset" value="reset">Reset</button>
+        <h2 id="output1"></h2>
+        <h2 id="output2"></h2>
+        <h2 id="output3"></h2>
+        <h2 id="output4"></h2>
+        <h2 id="output5"></h2>
+        <h2 id="output"></h2>
+        
+    </form>
+    <script>
+        function displayRadioValue() {
+            let ans=["ENVELOPE" ,"SILENCE","INCORRECTLY","TON","SPONGE"];
+            var z=0;
+            for(j=1;j<=5;j++){
+            var p="q"+j;
+            var ele = document.getElementsByName(p);
+              
+            for(i = 0; i < ele.length; i++) {
+                if(ele[i].checked)
+                {
+                    if((ele[i].value)===(ans[j-1]))
+                    z++;
+                
+                document.getElementById("output"+j).innerHTML
+                        = "Q"+j+": Your choice="+ele[i].value +" | Correct Answer= "+ ans[j-1];
+                }
+            }
+        }
+        document.getElementById("output").innerHTML="YOUR IQ SCORE IS "+z+"/5";
+    }
+    </script>
+    </div></main>
+</body>
+</html>
